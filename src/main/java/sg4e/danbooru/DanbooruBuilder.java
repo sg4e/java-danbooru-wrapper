@@ -26,6 +26,7 @@ package sg4e.danbooru;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Feign;
 import feign.Logger;
+import feign.auth.BasicAuthRequestInterceptor;
 import feign.jackson.JacksonDecoder;
 import feign.jackson.JacksonEncoder;
 import feign.okhttp.OkHttpClient;
@@ -35,10 +36,23 @@ import feign.okhttp.OkHttpClient;
  * @author sg4e
  */
 public class DanbooruBuilder {
+    
+    private String username = null;
+    private String apiKey = null;
+    
+    public DanbooruBuilder login(String username, String apiKey) {
+        this.username = username;
+        this.apiKey = apiKey;
+        return this;
+    }
+    
     public Danbooru build() {
         ObjectMapper mapper = new ObjectMapper();
         mapper.findAndRegisterModules();
-        return Feign.builder()
+        Feign.Builder feignBuilder = Feign.builder();
+        if(username != null && apiKey != null)
+            feignBuilder.requestInterceptor(new BasicAuthRequestInterceptor(username, apiKey));
+        return feignBuilder
                 .client(new OkHttpClient())
                 .encoder(new JacksonEncoder(mapper))
                 .decoder(new JacksonDecoder(mapper))

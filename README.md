@@ -6,6 +6,8 @@ By sg4e.
 
 ## Example code
 
+Works on Java 8 and above.
+
 ```java
 Danbooru danbooru = new DanbooruBuilder().build();
 //first parameter is tags; second is `true` for random posts or `false` for most recent
@@ -15,9 +17,9 @@ for (Post p : posts) {
 }
 ```
 
-`java-danbooru-wrapper` does not currently support authenticated queries; all queries are anonymous. Be aware of [Danbooru's restrictions](https://danbooru.donmai.us/wiki_pages/help%3Ausers) on anonymous users when making queries.
+`java-danbooru-wrapper` supports both authenticated and anonymous queries. Be aware of [Danbooru's restrictions](https://danbooru.donmai.us/wiki_pages/help%3Ausers) on anonymous users when making anonymous queries.
 
-Works on Java 8 and above.
+To make authenticated (logged-in) queries, create an API key on [your profile page](https://danbooru.donmai.us/profile) and pass it to `DanbooruBuilder.login(String username, String apiKey)` before calling `build()`.
 
 ## Gradle
 
