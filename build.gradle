@@ -8,19 +8,19 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.2'
-    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.11.2'
-    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.11.2'
-    implementation group: 'io.github.openfeign', name: 'feign-okhttp', version: '10.10.1'
-    implementation group: 'io.github.openfeign', name: 'feign-jackson', version: '10.10.1'
-    implementation group: 'io.github.openfeign', name: 'feign-slf4j', version: '10.10.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.13.3'
+    implementation group: 'io.github.openfeign', name: 'feign-okhttp', version: '11.8'
+    implementation group: 'io.github.openfeign', name: 'feign-jackson', version: '11.8'
+    implementation group: 'io.github.openfeign', name: 'feign-slf4j', version: '11.8'
     
     //lombok
-    compileOnly 'org.projectlombok:lombok:1.18.12'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.12'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     // Use JUnit Jupiter API for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
