@@ -30,7 +30,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * @author sg4e
  */
 public enum Rating {
-    SAFE("Safe", "s"),
+    GENERAL("General", "g"),
+    SENSITIVE("Sensitive", "s"),
     QUESTIONABLE("Questionable", "q"),
     EXPLICIT("Explicit", "e");
     
